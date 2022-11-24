@@ -96,7 +96,7 @@ function Footer () {
             <div className={cx('bottom')}>
                 <div className={cx('inner')}>
                     <div className={cx('info-company')}>
-                        <p className={cx('text-info')}>
+                        <p className={cx('text-info', 'text-bold')}>
                             Công ty Cổ phần Công nghệ Sen Đỏ, thành viên của Tập đoàn FPT
                         </p>
                         <p className={cx('text-info')}>
@@ -108,17 +108,24 @@ function Footer () {
                         <p className={cx('text-info')}>
                             Địa chỉ: Tầng 5, Tòa nhà A, Vườn Ươm Doanh Nghiệp, Lô D.01, Đường Tân Thuận, Khu chế xuất Tân Thuận, Phường Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, Việt Nam
                         </p>
-                        <p className={cx('text-info')}>
+                        <p className={cx('text-info', 'email')}>
                             Email: lienhe@sendo.vn
                         </p>
                         <div className={cx('certificate')}>
-                            <img src={BoCongThuong} alt='Bộ công thương' />
-                            <img src={ChongGia} alt="Tem chống giả" />
+                            <img src={BoCongThuong} alt='Bộ công thương' className={cx('img-cer')} />
+                            <img src={ChongGia} alt="Tem chống giả" className={cx('img-cer')} />
                         </div>
                     </div>
                     <div className={cx('register-email')}>
-                        <Input placeholder="Email của bạn là"/>
-                        <Button primary small>Đăng ký</Button>
+                        <div className={cx('text-bold', 'promotion')}>
+                            Đăng ký nhận bản tin ưu đãi khủng từ Sendo
+                        </div>
+                        <div className={cx('form-register')}>
+                            <div className={cx('mr-8')}>
+                                <Input placeholder="Email của bạn là " medium />
+                            </div>
+                            <Button primary small>Đăng ký</Button>
+                        </div>
                     </div>
                 </div>
             </div>
