@@ -1,0 +1,27 @@
+.wrapper {
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.small {
+    border: 1px solid rgb(139,147,152, 0.7);
+    padding: 8px;
+    color: #282b2d;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    width: 218px;
+    display: flex;
+
+    &:focus {
+        outline: 1px solid blue;
+    }
+}
+
+.large {
+    width: 932px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 1.6rem;
+    color: #282b2d;
+}

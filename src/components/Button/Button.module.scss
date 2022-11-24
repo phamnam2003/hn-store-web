@@ -1,0 +1,63 @@
+.wrapper {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.text {
+    font-size: 1.4rem;
+    color: #3f4b53;;
+    background-color: transparent;
+    text-align: left;
+    padding: 8px;
+    width: 161px;
+    display: flex;
+    height: 34px;
+    transition: all 0.4s;
+
+    &:hover {
+        background-color: #f2f3f4;
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
+
+// type button
+.primary {
+    background-color: var(--primary);
+    color: var(--text-white);
+    font-size: 1.4rem;
+    line-height: 1.9;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: #f1514f;
+    }
+}
+
+.normal {
+    background-color: var(--text-white);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+// Size button
+.medium {
+    padding: 4px 0;
+    width: 220px;
+}
+
+.small {
+    width: 105px;
+    height: 32px;
+    padding: 7px 16px;
+}
+
+.smallest {
+    background-color: var(--text-white);
+    width: 40px;
+    height: 40px;
+}
