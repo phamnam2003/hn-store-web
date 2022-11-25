@@ -42,6 +42,10 @@
     background-color: var(--text-white);
     font-weight: 600;
     font-size: 1.4rem;
+
+    &:hover {
+        background-color: #fafafa;
+    }
 }
 
 // Size button
