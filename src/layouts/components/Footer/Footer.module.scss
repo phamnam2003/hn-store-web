@@ -24,37 +24,6 @@
 .top {
     width: 100%;
     background-color: #fafafa;
-    padding: 16px;
-}
-
-// banner footer
-.banner-item {
-    padding: 8px 0;
-    cursor: pointer;
-    // width: 319px;
-    flex: 1;
-    height: 168px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & .img {
-        width: 130px;
-        height: 88px;
-    }
-
-    & .title {
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-
-    & .description {
-        width: 210px;
-        font-size: 1.2rem;
-        text-align: center;
-        color: #6f787e;
-    }
 }
 
 .middle {
@@ -77,12 +46,13 @@
     height: 164px;
     display: flex;
     flex-direction: column;
+    line-height: 1.6rem;
 
     & .title {
         font-weight: 600;
         text-transform: uppercase;
         opacity: 0.7;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
 
     & .list-items {
@@ -94,7 +64,7 @@
 
 .list-items .item {
     color: #3f4b53;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     
     &:hover {
         color: var(--primary);
@@ -107,13 +77,15 @@
     & .text {
         width: 200px;
         color: #3f4b53;
-        margin-bottom: 2px;
+        margin-bottom: 16px;
     }
 }
 
 .app {
-    width: 100%;
+    width: 327px;
     height: 96px;
+    display: flex;
+    flex-wrap: wrap;
 
     & .img-app {
         width: 120px;

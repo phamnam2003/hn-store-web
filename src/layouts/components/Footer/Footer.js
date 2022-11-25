@@ -1,9 +1,8 @@
 import classNames from "classnames/bind";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 import Input from "~/components/Input";
 import Button from "~/components/Button";
+import FeatureShop from "../FeatureShop";
 import styles from './Footer.module.scss';
 import AppStore from '~/assets/image/AppStore.png';
 import GooglePlay from '~/assets/image/GooglePlay.png';
@@ -14,27 +13,11 @@ import ChongGia from '~/assets/image/ChongGia.png';
 const cx = classNames.bind(styles);
 
 function Footer () {
-    const [banners, setBanners] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:1337/api/footer-banners')
-            .then(res => {
-                setBanners(res.data.data);
-            })
-            .catch(err => console.log(err))
-    }, [])
-
     return (
         <footer className={cx('wrapper')}>
             <div className={cx('top')}>
                 <div className={cx('inner')}>
-                    {banners.map(banner => (
-                        <div className={cx('banner-item')} key={banner.id}>
-                            <img src={banner.attributes.img_src} alt="banner" className={cx('img')} />
-                            <p className={cx('title')}>{banner.attributes.title}</p>
-                            <p className={cx('description')}>{banner.attributes.description}</p>
-                        </div>
-                    ))}
+                    <FeatureShop />
                 </div>
             </div>
             
@@ -45,11 +28,11 @@ function Footer () {
                             Về chúng tôi
                         </div>
                         <div className={cx('list-items')}>
-                            <a href="/" className={cx('item')}>Giới thiệu về Sendo</a>
-                            <a href="/" className={cx('item')}>Giới thiệu về SenMail</a>
+                            <a href="/" className={cx('item')}>Giới thiệu Sendo.vn</a>
+                            <a href="/" className={cx('item')}>Giới thiệu SenMall</a>
                             <a href="/" className={cx('item')}>Quy chế hoạt động</a>
                             <a href="/" className={cx('item')}>Chính sách bảo mật</a>
-                            <a href="/" className={cx('item')}>Giao hàng và nhận hàng</a>
+                            <a href="/" className={cx('item')}>Giao hàng và Nhận hàng</a>
                         </div>
                     </div>
                     <div className={cx('content')}>
@@ -69,10 +52,10 @@ function Footer () {
                             Dành cho người bán
                         </div>
                         <div className={cx('list-items')}>
-                            <a href="/" className={cx('item')}>Giải quyết khiếu nại</a>
-                            <a href="/" className={cx('item')}>Hướng dẫn mua hàng</a>
-                            <a href="/" className={cx('item')}>Chính sách đổi trả</a>
-                            <a href="/" className={cx('item')}>Chăm sóc khách hàng</a>
+                            <a href="/" className={cx('item')}>Quy định đối với người bán</a>
+                            <a href="/" className={cx('item')}>Chính sách bán hàng</a>
+                            <a href="/" className={cx('item')}>Hệ thống tiêu chí kiểm duyệt</a>
+                            <a href="/" className={cx('item')}>Mở shop trên Sendo</a>
                         </div>
                     </div>
                     <div className={cx('content')}>
