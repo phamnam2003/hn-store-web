@@ -7,7 +7,8 @@ import styles from './Header.module.scss';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import config from '~/config';
-import { CartIcon, LogoIcon, MoreIcon, SearchIcon } from '~/components/Icons';
+import { CartIcon, LogoIcon, SearchIcon } from '~/components/Icons';
+import ProductType from '~/components/ProductType';
 
 const cx = classNames.bind(styles);
 
@@ -84,15 +85,17 @@ function Header () {
                                 <LogoIcon />
                             </Link>
                         </div>
-                        <div className={cx('search')}>
+
+                        <div className={cx('middle')}>
                             <div className={cx('left-search')}>
-                                <MoreIcon />
+                                <ProductType />
                             </div>
                             <Input large placeholder="Tìm kiếm trên Store ..." />
                             <Button className={cx('search-btn')} smallest>
                                 <SearchIcon />
                             </Button>
                         </div>
+
                         <div className={cx('right')}>
                             <div className={cx('cart')}>
                                 <CartIcon />

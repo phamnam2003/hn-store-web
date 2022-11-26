@@ -73,6 +73,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            margin: 0 24px;
         }
     }
 }
@@ -81,10 +82,11 @@
     color: var(--text-white);
     display: flex;
     align-items: center;
+    width: 117px;
 }
 
 // search
-.search {
+.middle {
     width: 1024px;
     display: flex;
     justify-content: space-between;
