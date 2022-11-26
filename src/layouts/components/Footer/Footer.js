@@ -79,7 +79,7 @@ function Footer () {
             <div className={cx('bottom')}>
                 <div className={cx('inner')}>
                     <div className={cx('info-company')}>
-                        <p className={cx('text-info', 'text-bold')}>
+                        <p className={cx('text-info', 'text-bold', 'title-company')}>
                             Công ty Cổ phần Công nghệ Sen Đỏ, thành viên của Tập đoàn FPT
                         </p>
                         <p className={cx('text-info')}>
@@ -91,7 +91,7 @@ function Footer () {
                         <p className={cx('text-info')}>
                             Địa chỉ: Tầng 5, Tòa nhà A, Vườn Ươm Doanh Nghiệp, Lô D.01, Đường Tân Thuận, Khu chế xuất Tân Thuận, Phường Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, Việt Nam
                         </p>
-                        <p className={cx('text-info', 'email')}>
+                        <p className={cx('text-info')}>
                             Email: lienhe@sendo.vn
                         </p>
                         <div className={cx('certificate')}>
