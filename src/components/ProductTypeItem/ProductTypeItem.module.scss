@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #3f4b53;
+
+    & .inner {
+        width: 327px;
+    }
+}

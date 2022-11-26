@@ -1,9 +1,10 @@
 import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react/headless";
 
-import { MoreIcon } from "../Icons";
-import { Wrapper as PopperWrapper } from "../Popper";
+import { MoreIcon, ShirtIcon, SkirtIcon } from "~/components/Icons";
+import Menu  from "~/components/Popper/Menu";
 import styles from "./ProductType.module.scss";
+import ProductTypeItem from "~/components/ProductTypeItem";
 
 const cx = classNames.bind(styles);
 
@@ -12,20 +13,21 @@ function ProductType () {
         <div className={cx('wrapper')}>
             <Tippy 
                 interactive
-                offset={[0, 0]}
+                offset={[35, 15]}
+                visible
                 placement='bottom'
                 render={attrs => (
-                <div className={cx('support-extra')} {...attrs}>
-                    <PopperWrapper>
-                        <div className={cx('qr-code')}>
-                            <img className={cx('qr-img')} src='https://media3.scdn.vn/img2/2018/5_23/R842FO.png' alt='QR Code'/>
-                        </div>
-                        <div className={cx('qr-title')}>Quét để tải ứng dụng</div>
-                    </PopperWrapper>
+                    <div {...attrs}>
+                        <Menu>
+                            <ProductTypeItem icon={<SkirtIcon/>} leftTitle='Thời trang nữ' />
+                            <ProductTypeItem icon={<ShirtIcon/>} leftTitle='Thời trang nam' />
+                        </Menu>
                 </div>
                 )}
             >
-                <MoreIcon/>
+                <div className={cx('content')}>
+                    <MoreIcon/>
+                </div>
             </Tippy>
         </div>
     );
