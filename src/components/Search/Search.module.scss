@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+    
+    & .close {
+        position: absolute;
+        right: 3%;
+        top: 5px;
+        cursor: pointer;
+        color: var(--primary);
+        font-weight: bold;
+    }
+}

@@ -3,7 +3,7 @@ import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Input ({ placeholder, small = false, medium = false, large = false, className }) {
+function Input ({ placeholder, small = false, medium = false, large = false, className, ...passProps }) {
 
     const classes = cx('wrapper', {
         small, 
@@ -12,7 +12,7 @@ function Input ({ placeholder, small = false, medium = false, large = false, cla
         [className]: className
     })
     return (
-        <input placeholder={placeholder} className={classes}/>
+        <input placeholder={placeholder} className={classes} spellCheck={false} {...passProps}/>
     )
 }
 

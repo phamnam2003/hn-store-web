@@ -9,6 +9,7 @@ import Input from '~/components/Input';
 import config from '~/config';
 import { CartIcon, LogoIcon, SearchIcon } from '~/components/Icons';
 import ProductType from '~/components/ProductType';
+import Search from '~/components/Search/Search';
 
 const cx = classNames.bind(styles);
 
@@ -90,7 +91,7 @@ function Header () {
                             <div className={cx('left-search')}>
                                 <ProductType />
                             </div>
-                            <Input large placeholder="Tìm kiếm trên Store ..." />
+                            <Search />
                             <Button className={cx('search-btn')} smallest>
                                 <SearchIcon />
                             </Button>
