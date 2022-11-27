@@ -6,7 +6,7 @@ import styles from './ProductTypeItem.module.scss';
 
 const cx = classNames.bind(styles);
 
-function ProductTypeItem ({ icon, leftTitle, rightTitle }) {
+function ProductTypeItem ({ icon, leftTitle, middleTitle, rightTitle }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('body')}>
@@ -15,9 +15,18 @@ function ProductTypeItem ({ icon, leftTitle, rightTitle }) {
                 </div>
                 <div className={cx('title')}>
                     <p className={cx('text')}>{leftTitle}</p>
+                    {middleTitle ? (
+                        <Fragment>
+                            <p className={cx('cross')}> - </p>
+                            <p className={cx('text')}>{middleTitle}</p>
+                        </Fragment>
+                    ) : (
+                        <Fragment></Fragment>
+                    )}
+
                     {rightTitle ? (
                         <Fragment>
-                            <p> - </p>
+                            <p className={cx('cross')}> - </p>
                             <p className={cx('text')}>{rightTitle}</p>
                         </Fragment>
                     ) : (

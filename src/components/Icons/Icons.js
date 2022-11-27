@@ -242,7 +242,7 @@ export const BottleIcon = ({ width='2.4rem', height='2.4rem', className }) => (
     </svg>
 )
 
-export const MilkBottleIcon = (width='2.4rem', height='2.4rem', className) => (
+export const MilkBottleIcon = ({ width='2.4rem', height='2.4rem', className }) => (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
         width={width}
@@ -250,14 +250,14 @@ export const MilkBottleIcon = (width='2.4rem', height='2.4rem', className) => (
         viewBox="0 0 24 24" 
         role="img" 
         version="1.1" 
-        lass="d7e-0f24ac"
+        className={className}
     >
         <path d="M13 1a2 2 0 0 1 2 2v2h1a2 2 0 0 1 2 2v2c0 .397-.115.766-.315 1.077.2.363.315.794.315 1.256v9.334C18 21.955 17.105 23 16 23H8c-1.105 0-2-1.045-2-2.333v-9.334c0-.462.115-.893.314-1.256A1.987 1.987 0 0 1 6 9V7a2 2 0 0 1 2-2h1V3a2 2 0 0 1 2-2h2zm3 11H8v2h3v2H8v5h8v-9zm0-5H8v2h8V7zm-3-4h-2v2h2V3z" fill="currentColor" fillRule="nonzero">
         </path>
     </svg>
 )
 
-export const GameIcon = (width='2.4rem', height='2.4rem', className) => (
+export const GameIcon = ({ width='2.4rem', height='2.4rem', className }) => (
     <svg 
         xmlns="http://www.w3.org/2000/svg"
         width={width}
