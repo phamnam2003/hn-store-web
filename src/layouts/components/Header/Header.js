@@ -98,12 +98,12 @@ function Header () {
                         </div>
 
                         <div className={cx('right')}>
-                            <div className={cx('cart')}>
+                            <Link to={config.routes.cart} className={cx('cart')}>
                                 <CartIcon />
-                            </div>
-                            <div className={cx('login')}>
+                            </Link>
+                            <Link to={config.routes.login} className={cx('login')}>
                                 <Button small normal>Đăng nhập</Button>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

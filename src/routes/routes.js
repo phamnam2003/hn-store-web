@@ -11,6 +11,7 @@ import FlashSale from "~/pages/FlashSale";
 import Cart from "~/pages/Cart";
 import Login from "~/pages/Login";
 import Search from "~/pages/Search";
+import DetailProduct from "~/pages/DetailProduct";
 
 const publicRoutes = [
     { path: config.routes.home, component: Home },
@@ -18,6 +19,7 @@ const publicRoutes = [
     { path: config.routes.cart, component: Cart },
     { path: config.routes.login, component: Login, layout: FooterOnly },
     { path: config.routes.search, component: Search, layout: SearchLayout},
+    { path: config.routes.detailProduct, component: DetailProduct }
 ];
 
 const privateRoutes = [];

@@ -2,7 +2,7 @@
 
 function FlashSale () {
     return (
-        <h1>Detail Product</h1>
+        <h1>Flash Sale</h1>
     )
 }
 
