@@ -1,5 +1,33 @@
 .wrapper {
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+    display: flex;
+    justify-content: center;
+
+    & .inner {
+        width: var(--default-layout-content-width);
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.item {
+    width: 102px;
+    text-align: center;
+    
+    &:hover {
+        cursor: pointer;
+    }
+    
+    & .icon {
+        width: 44px;
+        height: 44px;
+    }
+    
+    & .title {
+        width: 100%;
+        line-height: 1.8rem;
+        font-size: 1.4rem;
+        color: rgb(0,0,0);
+    }
 }

@@ -1,0 +1,21 @@
+.wrapper {
+    width: 100%;
+    
+    & .top {
+        width: 100%;
+        box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+        background-color: #fff;
+    }
+}
+
+.promotion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .img-promotion {
+        width: var(--default-layout-content-width);
+        padding: 16px 24px;
+    }
+}
