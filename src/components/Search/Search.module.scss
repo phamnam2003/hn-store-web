@@ -4,10 +4,12 @@
     
     & .close {
         position: absolute;
-        right: 3%;
-        top: 5px;
+        display: flex;
+        justify-content: center;
+        right: 2%;
+        width: 20px;
+        top: 12px;
         cursor: pointer;
         color: var(--primary);
-        font-weight: bold;
     }
 }
