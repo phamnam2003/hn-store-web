@@ -1,0 +1,32 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    & .inner {
+        width: var(--body-width);
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 16px;
+    }
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+
+    & .title {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        font-weight: 700;
+    }
+
+    & .see-all {
+        font-size: 1.4rem;
+        color: #0f62fe;
+        cursor: pointer;
+    }
+}

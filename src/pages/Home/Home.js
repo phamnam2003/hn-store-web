@@ -3,6 +3,7 @@ import styles from './Home.module.scss';
 
 import RecommendCategory from "~/components/RecommendCategory";
 import FlashSaleProduct from "~/components/FlashSaleProduct";
+import GenuineBrands from "~/components/GenuineBrands";
 import Promotion from "~/assets/image/Promotion.png";
 
 const cx = classNames.bind(styles);
@@ -19,6 +20,7 @@ function Home () {
             {/* <br /> */}
             <div className={cx('middle')}>
                 <FlashSaleProduct />
+                <GenuineBrands />
             </div>
             <div className={cx('bottom')}>
 
