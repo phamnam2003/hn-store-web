@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import styles from "./SlideShow.module.scss";
 import SlideShow1 from "~/assets/image/SlideShow1.jpg";
 import SlideShow2 from "~/assets/image/SlideShow2.jpg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const cx = classNames.bind(styles);
 const SRC_IMG = [
@@ -16,26 +16,39 @@ const SRC_IMG = [
         src: SlideShow2
     }
 ];
-const timeDelay = 2500;
+const timeDelay = 5500;
 
 function SlideShow () {
     const [index, setIndex] = useState(0);
+    const timeOutRef = useRef(null);
+
+    function resetTimeOut () {
+        if (timeOutRef.current) {
+            clearTimeout(timeOutRef.current);
+        }
+    }
 
     useEffect(() => {
-        setTimeout(() => {
+        resetTimeOut();
+
+        timeOutRef.current = setTimeout(() => {
             setIndex(prevIndex => 
-                prevIndex = prevIndex === SRC_IMG.length - 1 ? 0 : prevIndex + 1
+                prevIndex === SRC_IMG.length - 1 ? 0 : prevIndex + 1
             )
         }, timeDelay);
+
+        return () => {
+            resetTimeOut();
+        }
     }, [index]);
 
     return (
         <div className={cx('wrapper')}>
             <div className={cx('slider')} 
-                style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
-
+                style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+            >
                 { SRC_IMG.map((img) => (
-                    <img className={cx('img-slide')} src={img.src} alt='Hello' key={img.id}/>
+                    <img className={cx('img-slide')} src={img.src} alt='Slideshow' key={img.id}/>
                 )) }
 
             </div>

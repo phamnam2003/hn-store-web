@@ -23,7 +23,7 @@ function Home () {
                 <GenuineBrands />
             </div>
             <div className={cx('bottom')}>
-
+                
             </div>
         </div>
     )
