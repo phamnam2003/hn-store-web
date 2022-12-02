@@ -19,3 +19,19 @@
         padding: 16px 24px;
     }
 }
+
+.bottom {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .inner {
+        width: var(--default-layout-content-width);
+        padding: 0 24px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}

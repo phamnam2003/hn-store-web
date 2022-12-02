@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s;
 }
 
 .text {
@@ -51,7 +52,24 @@
     }
 }
 
+.special {
+    background-color: var(--text-white);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
 // Size button
+.large {
+    max-width: 428px;
+    height: 44px;
+    padding: 10px 16px;
+}
+
 .medium {
     padding: 4px 0;
     width: 220px;

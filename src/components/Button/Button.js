@@ -9,6 +9,7 @@ function Button ({
     href, 
     primary = false, 
     normal = false,
+    special=false,
     text = false, 
     small = false, 
     smallest = false, 
@@ -46,6 +47,7 @@ function Button ({
     const classes = cx('wrapper', {
         primary,
         normal,
+        special,
         text,
         small,
         smallest,

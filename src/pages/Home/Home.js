@@ -5,6 +5,8 @@ import RecommendCategory from "~/components/RecommendCategory";
 import FlashSaleProduct from "~/components/FlashSaleProduct";
 import GenuineBrands from "~/components/GenuineBrands";
 import Promotion from "~/assets/image/Promotion.png";
+import RandomProduct from "~/components/RandomProduct";
+import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
@@ -21,9 +23,12 @@ function Home () {
             <div className={cx('middle')}>
                 <FlashSaleProduct />
                 <GenuineBrands />
+                <RandomProduct />
             </div>
             <div className={cx('bottom')}>
-                
+                <div className={cx('inner')}>
+                    <Button large special>Xem thêm</Button>
+                </div>
             </div>
         </div>
     )

@@ -1,0 +1,15 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .inner {
+        width: var(--product-container-width);
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.item-product {
+    width: 16.66666667%;
+}
