@@ -14,37 +14,39 @@ function ProductItem ({ img_avatar, name, original_price, percent_discount, pric
     return (
         <div className={cx('wrapper')}>
             <div className={cx('content')}>
-                <img src={img_avatar} alt={name} />
-                <div><img src={FreeShip} alt='Free Ship'/></div>
-
-                <div>
-                    <img src={ShopPlus} alt="Shop Plus" />
-                    <div className={cx('name-product')}>
-                        {name}
-                    </div>
+                <div className={cx('img', 'top')}>
+                    <img src={img_avatar} alt={name} className={cx('img-product')} />
+                    <img src={FreeShip} alt='Free Ship' className={cx('free-ship')}/>
                 </div>
 
-                { !!original_price ? (
-                    <div className={cx('discount')}>
-                        <div className={cx('original-price')}>{original_price}</div>
-                        <div className={cx('percent-discount')}>{percent_discount}</div>
+                <div className={cx('bottom')}>
+                    <div className={cx('name-and-shop')}>
+                        <img src={ShopPlus} alt="Shop Plus" className={cx('shop-plus')} />
+                        {name.toString().substring(0,40)}
                     </div>
-                ) : <Fragment></Fragment> }
 
-                <div className={cx('price')}>{price}</div>
-                <div className={cx('extra')}>
-                    <img src={Installment} alt="Logo trả góp"/>
-                    <p className={cx('text-installment')}>Trả góp Kredivo</p>
-                </div>
+                    { !!original_price ? (
+                        <div className={cx('discount')}>
+                            <div className={cx('original-price')}>{original_price}đ</div>
+                            <div className={cx('percent-discount')}>-{percent_discount}%</div>
+                        </div>
+                    ) : <Fragment></Fragment> }
 
-                <div className={cx('sold')}>Đã bán {sold}</div>
-
-                <div className={cx('reviews-and-adress')}>
-                    <div className={cx('reviews')}>
-                        <div className={cx('number')}>{rate_product}</div>
-                        <div className={cx('start')}>★</div>
+                    <div className={cx('price')}>{price}đ</div>
+                    <div className={cx('extra')}>
+                        <img src={Installment} alt="Logo trả góp" className={cx('img-installment')}/>
+                        <p className={cx('text-installment')}>Trả góp Kredivo</p>
                     </div>
-                    <div className={cx('adress')}>{adress}</div>
+
+                    <div className={cx('sold')}>Đã bán {sold}</div>
+
+                    <div className={cx('reviews-and-adress')}>
+                        <div className={cx('reviews')}>
+                            <div className={cx('number')}>{rate_product}/5</div>
+                            <div className={cx('star')}>★</div>
+                        </div>
+                        <div className={cx('adress')}>{adress}</div>
+                    </div>
                 </div>
             </div>
         </div>

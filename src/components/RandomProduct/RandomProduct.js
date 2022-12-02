@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./RandomProduct.module.scss";
 import ProductItem from "~/components/ProductItem";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -20,7 +21,10 @@ function RandomProduct () {
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 { rProducts.map(product => (
-                    <div className={cx('item-product')} key = {product.id}>
+                    <Link 
+                        to={`/products/${product.attributes.SEOURL}`} 
+                        className={cx('item-product')} key = {product.id}
+                    >
                         <ProductItem 
                             img_avatar={product.attributes.img_avatar}
                             name={product.attributes.name}
@@ -31,7 +35,7 @@ function RandomProduct () {
                             rate_product={product.attributes.rate_product}
                             adress={product.attributes.adress}
                             />
-                    </div>
+                    </Link>
                 )) }
             </div>
         </div>

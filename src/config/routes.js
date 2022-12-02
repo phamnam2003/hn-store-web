@@ -4,7 +4,7 @@ const routes = {
     sale: '/flash-sale',
     login: '/login',
     register: '/register',
-    detailProduct: '/product/:id',
+    detailProduct: '/products/:SEOURL',
     search: '/search'
 }
 
