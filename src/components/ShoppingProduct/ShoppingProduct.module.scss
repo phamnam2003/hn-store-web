@@ -14,11 +14,12 @@
     display: flex;
     background-color: var(--text-white);
     border-radius: 8px;
-    min-height: 850px; 
+    max-height: 684px; // 
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 2%), 0 -2px 2px 0 rgb(0 0 0 / 2%);
 
     & .left {
         width: 41.6666667%;
+        height: 100%;
         padding: 24px;
         display: flex;
         flex-direction: column;
@@ -28,5 +29,141 @@
     & .right {
         flex: 1;
         padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
+}
+
+.top-left {
+    width: 100%;
+    position: relative;
+
+    & .img-avatar {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    & .button {
+        display: flex;
+        position: absolute;
+        bottom: 1%;
+        right: 0;
+    }
+}
+
+.bottom-left {
+    width: 100%;
+    height: 100%;
+    padding: 16px 0;
+
+    & .img-desc {
+        border-radius: 4px;
+        border: 2px solid transparent;
+        width: 72px;
+        height: 72px;
+        margin-right: 12px;
+        object-fit: cover;
+
+        &:hover {
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+    }
+
+    & .img-desc:first-child {
+        border: 2px solid var(--primary);
+    }
+}
+
+.top-right {
+    height: 191px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 2px solid #d9d9d9;
+
+    & .name-and-shop {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: #0f1e29;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.2rem;
+    }
+
+    & .price {
+        color: var(--price-color);
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 3.2rem;
+    }
+
+    & .discount {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    & .reviews-and-sold {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+}
+
+.shop-plus {
+    width: 44px;
+    height: 16px;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+.original-price {
+    color: #b7bbbf;
+    text-decoration: line-through;
+    margin-right: 4px;
+}
+
+.percent-discount {
+    color: var(--price-color);
+}
+
+.star {
+    color: #ffc600;
+}
+
+.rate-product {
+    color: #0f62fe;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.dot {
+    color: #6f787e;
+    margin: 0 6px;
+}
+
+.sold {
+    color: #6f787e;
+}
+
+.middle-right {
+    flex: 1;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// bottom right 
+.bottom-right {
+    height: 230px;
+    background-color: #ccc;
 }

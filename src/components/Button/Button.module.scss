@@ -54,11 +54,17 @@
 
 .action {
     background-color: #e7e8ea;
+    color: #6F787E;
     width: 32px;
     height: 32px;
+    margin-right: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    & :hover {
+        color: var(--primary);
+    }
 }
 
 .special {

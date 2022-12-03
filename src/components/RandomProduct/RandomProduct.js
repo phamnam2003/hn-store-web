@@ -12,7 +12,7 @@ function RandomProduct () {
     const [rProducts, setRProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:1337/api/products?pagination[start]=0&pagination[limit]=10')
+        axios.get('http://localhost:1337/api/products?pagination[start]=0&pagination[limit]=24')
             .then(res => setRProducts(res.data.data))
             .catch(err => console.log(err))
     }, []);
