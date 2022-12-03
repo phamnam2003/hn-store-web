@@ -11,9 +11,22 @@
 
 .content {
     width: 100%;
+    display: flex;
     background-color: var(--text-white);
     border-radius: 8px;
-    padding: 24px;
     min-height: 850px; 
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 2%), 0 -2px 2px 0 rgb(0 0 0 / 2%);
+
+    & .left {
+        width: 41.6666667%;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    & .right {
+        flex: 1;
+        padding: 24px;
+    }
 }
