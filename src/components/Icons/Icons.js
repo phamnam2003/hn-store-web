@@ -373,3 +373,31 @@ export const HeartIcon = ({ width='1.6rem', height='1.6rem', className }) => (
         </path>
     </svg>
 )
+
+export const LessIcon = ({ width='1.6rem', height='1.6rem', className }) => (
+    <svg 
+        width={width} 
+        height={height} 
+        viewBox="0 0 24 24"
+        mlns="http://www.w3.org/2000/svg" 
+        version="1.1" 
+        className={className}
+    >
+        <path fill="currentColor" fillRule="nonzero" d="M22 11v2H2v-2z">
+        </path>
+    </svg>
+)
+
+export const AddIcon = ({ width="1.6rem", height="1.6rem", className }) => (
+    <svg 
+        width={width}
+        height={height}
+        viewBox="0 0 24 24" 
+        xmlns="http://www.w3.org/2000/svg" 
+        version="1.1" 
+        className={className}
+    >
+        <path fill="currentColor" fillRule="nonzero" d="M13 11h9v2h-9v9h-2v-9H2v-2h9V2h2z">
+        </path>
+    </svg>
+)

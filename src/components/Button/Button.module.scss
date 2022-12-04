@@ -67,6 +67,29 @@
     }
 }
 
+.size {
+    height: 34px;
+    width: fit-content;
+    padding: 0 12px;
+    margin: 0 4px;
+    background-color: #e7e8ea;
+    border: 2px solid transparent;
+    color: #6f787e;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    &:hover {
+        background-color: #fff;
+        border-color: var(--primary);
+    }
+
+    &:active {
+        background-color: #fff;
+        border-color: var(--primary);
+    }
+}
+
 .special {
     background-color: var(--text-white);
     font-weight: 700;
@@ -79,6 +102,14 @@
 }
 
 // Size button
+.largest {
+    width: 353.5px;
+    font-weight: 700;
+    padding: 12px 16px;
+    font-size: 1.6rem;
+    line-height: 1.38;
+}
+
 .large {
     max-width: 428px;
     height: 44px;
@@ -103,5 +134,14 @@
 
     &:hover {
         background-color: #fafafa;
+    }
+}
+
+.hover {
+    color: #3f4b53;
+    background-color: #e7e8ea;
+
+    &:hover {
+        background-color: #f1f1f1;
     }
 }

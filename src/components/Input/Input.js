@@ -4,9 +4,10 @@ import { forwardRef } from "react";
 
 const cx = classNames.bind(styles);
 
-function Input ({ placeholder, small = false, medium = false, large = false, className, ...passProps }, ref) {
+function Input ({ placeholder, smallest = false, small = false, medium = false, large = false, className, ...passProps }, ref) {
 
     const classes = cx('wrapper', {
+        smallest,
         small, 
         large,
         medium,

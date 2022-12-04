@@ -6,13 +6,13 @@ import styles from "./ShoppingProduct.module.scss";
 import Button from "../Button";
 import { HeartIcon, ShareIcon } from "../Icons";
 import ShopPlus from "~/assets/image/ShopPlus.png";
-// import button
+import ChangeAmount from "~/components/ChangAmount";
 
 const cx = classNames.bind(styles);
 
 function ShoppingProduct ({ SEOURL_product }) {
     const [product, setProduct] = useState([]);
-    let IMG_DESC;
+    var IMG_DESC, COLOR, SIZE;
 
     useEffect(() => {
         axios.get(`http://localhost:1337/api/products?filters[SEOURL][$eq]=${SEOURL_product}`)
@@ -22,6 +22,8 @@ function ShoppingProduct ({ SEOURL_product }) {
 
     if (product.length > 0) {
         IMG_DESC = product.map(info => info.attributes.img_desc).toString().split(",");
+        COLOR = product.map(info =>  !!info.attributes.color ? info.attributes.color : "").toString().split(",");
+        SIZE = product.map(info =>  !!info.attributes.size ? info.attributes.size : "").toString().split(",");
     }
 
     return (
@@ -84,21 +86,29 @@ function ShoppingProduct ({ SEOURL_product }) {
                                     <div className={cx('color')}>
                                         <div className={cx('text')}>Chọn màu sắc:</div>
                                         <div className={cx('content-color')}>
-
+                                            { COLOR.map(color => (
+                                                <Button size key={color}>{color}</Button>
+                                            )) }
                                         </div>
                                     </div>
                                 ) : <></> }
                                 { info.attributes.size ? (
-                                    <div className={cx('color')}>
+                                    <div className={cx('size')}>
                                         <div className={cx('text')}>Chọn kích thước:</div>
+                                        <div className={cx('content-size')}>
+                                            { SIZE.map(size => (
+                                                <Button size key={size}>{size}</Button>
+                                            )) }
+                                        </div>
                                     </div>
                                 ) : <></> }
                                 <div className={cx('amount')}>
-                                    amount
+                                    <div className={cx('text')}>Chọn số lượng:</div>
+                                    <ChangeAmount />
                                 </div>
                                 <div className={cx('button-action')}>
-                                    <Button>Thêm vào giỏ hàng</Button>
-                                    <Button primary>Mua ngay</Button>
+                                    <Button largest hover>Thêm vào giỏ hàng</Button>
+                                    <Button primary largest>Mua ngay</Button>
                                 </div>
                             </div>
 
