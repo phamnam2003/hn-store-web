@@ -1,6 +1,4 @@
 import classNames from "classnames/bind";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 import styles from "./ShoppingProduct.module.scss";
 import Button from "../Button";
@@ -12,15 +10,8 @@ import ChangeAmount from "~/components/ChangAmount";
 
 const cx = classNames.bind(styles);
 
-function ShoppingProduct ({ SEOURL_product }) {
-    const [product, setProduct] = useState([]);
-    var IMG_DESC, COLOR, SIZE;
-
-    useEffect(() => {
-        axios.get(`http://localhost:1337/api/products?filters[SEOURL][$eq]=${SEOURL_product}`)
-            .then(res => setProduct(res.data.data))
-            .catch(err => console.log(err))
-    }, [SEOURL_product]);
+function ShoppingProduct ({ product }) {
+    let IMG_DESC, COLOR, SIZE;
 
     if (product.length > 0) {
         IMG_DESC = product.map(info => info.attributes.img_desc).toString().split(",");
@@ -117,7 +108,7 @@ function ShoppingProduct ({ SEOURL_product }) {
                             <div className={cx('bottom-right')}>
                                 <div className={cx('promotion-for-you')}>
                                     <p className={cx('title')}>
-                                        <p>Ưu đãi dành cho bạn</p>
+                                        Ưu đãi dành cho bạn
                                         <InfoIcon />
                                     </p>
                                     <div className={cx('body')}>
@@ -133,7 +124,7 @@ function ShoppingProduct ({ SEOURL_product }) {
                                 </div>
                                 <div className={cx('benifit')}>
                                     <p className={cx('title')}>
-                                        <p>Quyền lợi khách hàng</p>
+                                        Quyền lợi khách hàng
                                         <InfoIcon />
                                     </p>
                                     <div className={cx('body')}>

@@ -5,3 +5,119 @@
     padding: 24px;
     box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
 }
+
+.top {
+    width: 100%;
+    height: 204px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+
+    & .info-shop {
+        display: flex;
+        align-items: center;
+    }
+
+    & .response-shop {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.avatar-shop {
+    height: 74px;
+    width: 74px;
+    margin-right: 8px;
+
+    & .img-avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.info {
+    flex: 1;
+
+    & .name {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        font-weight: 700;
+    }
+
+    & .img-shop-plus {
+        width: 44px;
+        height: 16px;
+        object-fit: cover;
+        margin: 4px 0;
+    }
+
+    & .adress-and-reviews {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        color: #6f787e;
+        display: flex;
+    }
+}
+
+.adress {
+    border-right: 1px solid #6f787e;
+    padding-right: 8px;
+    margin-right: 8px;
+}
+
+.reviews {
+    display: flex;
+    align-items: center;
+
+    & .star {
+        color: #ffc600;
+        font-size: 1.4rem;
+        margin-left: 4px;
+    }
+}
+
+.response {
+    flex: 1;
+    height: 42px;
+    text-align: center;
+
+    & .text-content {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        color: #0f1e29;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    & .title {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        color: #0f1e29;
+    }
+}
+
+.action-shop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & .btn-action {
+        width: 208px;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+
+        & .content-btn {
+            color: #3f4b53;
+            font-size: 1.4rem;
+            line-height: 1.29;
+            margin-left: 8px;
+        }
+    }
+}

@@ -1,5 +1,7 @@
 import classNames from "classnames/bind";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import RandomProduct from "~/components/RandomProduct";
 import Button from "~/components/Button";
@@ -11,18 +13,25 @@ import ProductInfo from "~/components/ProductInfo";
 const cx = classNames.bind(styles);
 
 function DetailProduct () {
+    const [product, setProduct]= useState([]);
     const { SEOURL } = useParams();
+
+    useEffect(() => {
+        axios.get(`http://localhost:1337/api/products?filters[SEOURL][$eq]=${SEOURL}`)
+            .then(res => setProduct(res.data.data))
+            .catch(err => console.log(err))
+    }, [SEOURL]);
 
     return (
         <div className={cx('wrapper')}>
             <div className={cx('top')}>
-                <ShoppingProduct SEOURL_product={SEOURL} />
+                <ShoppingProduct product={product} />
             </div>
 
             <div className={cx('middle')}>
                 <div className={cx('shop-and-info')}>
                     <div className={cx('store-info')}>
-                        <StoreInfo SEOURL_product={SEOURL} />
+                        <StoreInfo product={product} />
                     </div>
                     <div className={cx('product-info')}>
                         <ProductInfo SEOURL_product={SEOURL} />

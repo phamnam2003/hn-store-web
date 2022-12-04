@@ -98,4 +98,12 @@
         align-items: center;
         margin-right: 8px;
     }
+
+    & .search-btn {
+        background-color: var(--text-white);
+
+        &:hover {
+            background-color: #fafafa;
+        }
+    }
 }
