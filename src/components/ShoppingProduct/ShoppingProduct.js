@@ -4,8 +4,10 @@ import axios from "axios";
 
 import styles from "./ShoppingProduct.module.scss";
 import Button from "../Button";
-import { HeartIcon, ShareIcon } from "../Icons";
+import { HeartIcon, InfoIcon, ShareIcon, ShieldIcon } from "../Icons";
 import ShopPlus from "~/assets/image/ShopPlus.png";
+import AppMobile from "~/assets/image/AppMobile.png";
+import Installment from "~/assets/image/Installment.png";
 import ChangeAmount from "~/components/ChangAmount";
 
 const cx = classNames.bind(styles);
@@ -113,7 +115,38 @@ function ShoppingProduct ({ SEOURL_product }) {
                             </div>
 
                             <div className={cx('bottom-right')}>
-                                Bottom Right
+                                <div className={cx('promotion-for-you')}>
+                                    <p className={cx('title')}>
+                                        <p>Ưu đãi dành cho bạn</p>
+                                        <InfoIcon />
+                                    </p>
+                                    <div className={cx('body')}>
+                                        <div className={cx('content-left')}>
+                                            <img src={Installment} alt="Trả góp" className={cx('img-instead')} />
+                                            <p className={cx('text-content')}>Trả góp Kredivo</p>
+                                        </div>
+                                        <div className={cx('content-right')}>
+                                            <img src={AppMobile} alt="App Mobile" className={cx('img-instead')} />
+                                            <p className={cx('text-content')}>Giảm khi mua qua App</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={cx('benifit')}>
+                                    <p className={cx('title')}>
+                                        <p>Quyền lợi khách hàng</p>
+                                        <InfoIcon />
+                                    </p>
+                                    <div className={cx('body')}>
+                                        <div className={cx('content-left')}>
+                                            <ShieldIcon /> 
+                                            <p className={cx('text-content')}>Miễn phí hoàn trả</p>
+                                        </div>
+                                        <div className={cx('content-right')}>
+                                            <ShieldIcon /> 
+                                            <p className={cx('text-content')}>48h hoàn trả</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

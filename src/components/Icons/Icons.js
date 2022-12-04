@@ -401,3 +401,35 @@ export const AddIcon = ({ width="1.6rem", height="1.6rem", className }) => (
         </path>
     </svg>
 )
+
+export const ShieldIcon = ({ width = "2.4rem", height="2.4rem", className }) => (
+    <svg 
+        width={width} 
+        height={height}
+        viewBox="0 0 24 24" 
+        xmlns="http://www.w3.org/2000/svg" 
+        version="1.1" class="d7ed-SwZDZ2"
+    >
+        <g fill="none" fill-rule="evenodd">
+            <path d="m19 15 .002-1.245.004-1.954.003-1.691c.004-2.232.003-4.148 0-4.74-.33-.206-.846-.524-1.118-.706C16.414 3.68 14.26 3 12 3 9.838 3 7.029 4.051 6.11 4.664c-.27.18-.779.494-1.11.7V15c0 1.508 2.23 3.569 7 5.802 4.772-2.228 7-4.288 7-5.802Z" fill="#D6EFDF">
+            </path>
+            <path d="M12 1c2.995 0 5.5 1 7 2s2 1 2 2c.026.291 0 8.5 0 10 0 2.667-3 5.333-9 8-6-2.673-9-5.34-9-8V5c0-1 .5-1 2-2 .162-.108 3.563-2 7-2Zm0 2C9.838 3 7.029 4.051 6.11 4.664c-.27.18-.779.494-1.11.7V15c0 1.508 2.23 3.569 7 5.802 4.772-2.228 7-4.288 7-5.802v-.694l.001-.167v-.384l.005-1.954.003-1.691v-.575c.004-1.98.003-3.625 0-4.166-.33-.205-.846-.523-1.118-.705C16.414 3.68 14.26 3 12 3Zm3.293 5.293 1.414 1.414L11 15.414l-3.707-3.707 1.414-1.414L11 12.586l4.293-4.293Z" 
+                fill="#449460">
+            </path>
+        </g>
+    </svg>
+)
+
+export const InfoIcon = ({ width="2.4rem", height="2.4rem", className }) => (
+    <svg 
+        width={width} 
+        height={height} 
+        viewBox="0 0 24 24" 
+        xmlns="http://www.w3.org/2000/svg" 
+        version="1.1" 
+        className={className}
+    >
+        <path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1Zm0 2a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm1.004 6.998v4h.999v2h-4v-2h1v-2h-1v-2h3Zm-1.004-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="#6F787E" fillRule="nonzero">
+        </path>
+    </svg>
+)

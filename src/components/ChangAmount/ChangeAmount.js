@@ -18,14 +18,26 @@ function ChangeAmount () {
         if (e.target.value > 100) {
             setInputValue(100);
         }
-        if (e.target.value === '') {
-            setInputValue(1)
+        if (e.target.value && e.target.value < 1) {
+            setInputValue(1);
+        }
+    }
+
+    const handleDecrease = () => {
+        if (inputValue !== 1) {
+            setInputValue(inputValue - 1)
+        }
+    }
+
+    const handleIncrease = () => {
+        if (inputValue < 100) {
+            setInputValue(inputValue + 1)
         }
     }
 
     return (
         <div className={cx('wrapper')}>
-            <Button action hover><LessIcon/></Button>
+            <Button action hover onClick={handleDecrease}><LessIcon/></Button>
             <Input 
                 smallest
                 ref={inputRef}
@@ -33,7 +45,7 @@ function ChangeAmount () {
                 maxLength={3}
                 onChange={handleInput}
                 />
-            <Button action hover><AddIcon/></Button>
+            <Button action hover onClick={handleIncrease}><AddIcon/></Button>
         </div>
     )
 }

@@ -153,14 +153,17 @@
 }
 
 .middle-right {
-    flex: 1;
+    min-height: 160px;
+    max-height: 260px;
     padding: 16px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-bottom: 1px solid #d9d9d9;
 
     & .color, & .size, & .amount {
         display: flex;
+        margin-bottom: 20px;
     }
 
     & .button-action {
@@ -168,6 +171,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 4px;
     }
 }
 
@@ -187,6 +191,52 @@
 
 // bottom right 
 .bottom-right {
-    height: 190px;
-    background-color: #ccc;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .promotion-for-you {
+        flex: 1;
+        padding-bottom: 12px;
+        border-bottom: 2px solid rgb(224, 224, 224);
+    }
+
+    & .benifit {
+        flex: 1;
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    color: #0f1e29;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    margin: 20px 0;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+
+    & .content-left, & .content-right {
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.img-instead {
+    width: 24px;
+    height: 24px;
+}
+
+.text-content {
+    color: #0f1e29;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-left: 8px;
 }
