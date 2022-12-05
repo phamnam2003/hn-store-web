@@ -8,6 +8,24 @@ import { FollowIcon, StoreIcon, TelephoneIcon } from "../Icons";
 
 const cx = classNames.bind(styles);
 
+const SUGGEST_PRODUCT = [
+    {
+        img: 'https://media3.scdn.vn/img4/2022/06_20/YwUQbV2oATaKYxxBL2Su.png', 
+        title: "Đầm Cát Hàn nữ",
+        price: "109.000đ"
+    },
+    {
+        img: "https://media3.scdn.vn/img3/2019/10_16/jIyJ9g.jpg", 
+        title: "Đầm đuôi cá dễ thương",
+        price: "120.000đ"
+    },
+    {
+        img: "https://media3.scdn.vn/img3/2019/10_16/mbUab3.jpg", 
+        title: "Đầm nữ ôm Cát Hàn",
+        price: "150.000đ"
+    }
+]
+
 function StoreInfo ({ product }) {
     return (
         <div className={cx('wrapper')}>
@@ -75,7 +93,18 @@ function StoreInfo ({ product }) {
                         </div>
                     </div>
                     <div className={cx('bottom')}>
-                        Gợi ý thêm từ Shop
+                        <div className={cx('title-bottom')}>Gợi ý thêm từ Shop</div>
+                        <div className={cx('suggest-product')}>
+                            { SUGGEST_PRODUCT.map((product, index) => (
+                                <div className={cx('card-product')} key={index}>
+                                    <img src={product.img} alt={product.title} className={cx('img-product')}/>
+                                    <div className={cx('info')}>
+                                        <p className={cx('name-product')}>{product.title}</p>
+                                        <p className={cx('price')}>{product.price}</p>
+                                    </div>
+                                </div>
+                            )) }
+                        </div>
                     </div>
                 </Fragment>                          
             )) }
