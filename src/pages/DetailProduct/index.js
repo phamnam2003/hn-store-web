@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import RandomProduct from "~/components/RandomProduct";
-import Button from "~/components/Button";
 import styles from "./DetailProduct.module.scss";
 import ShoppingProduct from "~/components/ShoppingProduct";
 import StoreInfo from "~/components/StoreInfo";
@@ -34,19 +33,13 @@ function DetailProduct () {
                         <StoreInfo product={product} />
                     </div>
                     <div className={cx('product-info')}>
-                        <ProductInfo SEOURL_product={SEOURL} />
+                        <ProductInfo product={product} />
                     </div>
                 </div>
                 <p className={cx('text-recommend-product')}>
                     Ở đây có sản phẩm bạn thích
                 </p>
                 <RandomProduct />
-            </div>
-
-            <div className={cx('bottom')}>
-                <div className={cx('button')}>
-                    <Button large special>Xem thêm</Button>
-                </div>
             </div>
         </div>
     )

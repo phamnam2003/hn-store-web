@@ -53,3 +53,7 @@ html *::-webkit-scrollbar-thumb {
 html *::-webkit-scrollbar-track {
     background: #fff;
 }
+
+div::-webkit-scrollbar {
+    display: none;
+}

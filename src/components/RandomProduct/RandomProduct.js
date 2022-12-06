@@ -12,10 +12,25 @@ function RandomProduct () {
     const [rProducts, setRProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:1337/api/products?pagination[start]=0&pagination[limit]=24')
-            .then(res => setRProducts(res.data.data))
+        axios.get(`http://localhost:1337/api/products?pagination[start]=0&pagination[limit]=24`)
+            .then(res => {
+                setRProducts(shuffle(res.data.data));
+            })
             .catch(err => console.log(err))
     }, []);
+
+    function shuffle (arr) {
+        let index = arr.length, randomIndex;
+
+        while (index !== 0) {
+            randomIndex = Math.floor(Math.random() * index);
+            index--;
+
+            [arr[index], arr[randomIndex]] = [arr[randomIndex], arr[index]];
+        }
+
+        return arr;
+    }
 
     return (
         <div className={cx('wrapper')}>
