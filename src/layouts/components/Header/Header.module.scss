@@ -73,7 +73,6 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            margin: 0 24px;
         }
     }
 }
@@ -85,11 +84,9 @@
     width: 117px;
 }
 
-// search
 .middle {
     width: 1024px;
     display: flex;
-    justify-content: space-between;
 
     & .left-search {
         cursor: pointer;
@@ -97,13 +94,5 @@
         display: flex;
         align-items: center;
         margin-right: 8px;
-    }
-
-    & .search-btn {
-        background-color: var(--text-white);
-
-        &:hover {
-            background-color: #fafafa;
-        }
     }
 }

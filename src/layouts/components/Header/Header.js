@@ -7,9 +7,9 @@ import styles from './Header.module.scss';
 import Button from '~/components/Button';
 import Input from '~/components/Input';
 import config from '~/config';
-import { CartIcon, LogoIcon, SearchIcon } from '~/components/Icons';
+import { CartIcon, LogoIcon } from '~/components/Icons';
 import ProductType from '~/components/ProductType';
-import Search from '~/components/Search/Search';
+import Search from '~/components/Search';
 
 const cx = classNames.bind(styles);
 
@@ -92,9 +92,6 @@ function Header () {
                                 <ProductType />
                             </div>
                             <Search />
-                            <Button className={cx('search-btn')} smallest>
-                                <SearchIcon />
-                            </Button>
                         </div>
 
                         <div className={cx('right')}>

@@ -1,6 +1,7 @@
 .wrapper {
     width: 100%;
     position: relative;
+    display: flex;
     
     & .close {
         position: absolute;
@@ -11,5 +12,13 @@
         top: 12px;
         cursor: pointer;
         color: var(--primary);
+    }
+}
+
+.search-btn {
+    background-color: var(--text-white);
+
+    &:hover {
+        background-color: #fafafa;
     }
 }

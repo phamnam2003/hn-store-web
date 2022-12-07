@@ -9,6 +9,8 @@ import Input from "../Input";
 import styles from './Search.module.scss';
 import PopperSearch from "~/components/Popper/PopperSearch";
 import SearchItem from "../SearchItem";
+import Button from "../Button";
+import { SearchIcon } from "../Icons";
 
 const cx = classNames.bind(styles)
 
@@ -61,6 +63,10 @@ function Search () {
                     {valueInput && <div className={cx('close')} onClick={handleDelete}>
                         <FontAwesomeIcon icon={faXmark}/>
                     </div>}
+
+                    <Button className={cx('search-btn')} smallest>
+                        <SearchIcon />
+                    </Button>
                 </div>
             </Tippy>
         </div>
