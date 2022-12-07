@@ -6,7 +6,7 @@ import { HeartIcon, InfoIcon, ShareIcon, ShieldIcon } from "../Icons";
 import ShopPlus from "~/assets/image/ShopPlus.png";
 import AppMobile from "~/assets/image/AppMobile.png";
 import Installment from "~/assets/image/Installment.png";
-import ChangeAmount from "~/components/ChangAmount";
+import ChangeAmount from "~/components/ChangeAmount";
 
 const cx = classNames.bind(styles);
 
