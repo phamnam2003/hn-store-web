@@ -64,7 +64,7 @@
     & .right {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 175px;
         height: 32px;
 
@@ -73,6 +73,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            margin-left: 24px;
         }
     }
 }

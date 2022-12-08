@@ -26,6 +26,7 @@ function Search () {
     }, [valueInput])
 
     const inputRef = useRef();
+    const searchPath = !!valueInput ? `/search?keyword=${valueInput}`: '';
 
     const handleDelete = () => {
         setValueInput('');
@@ -33,13 +34,19 @@ function Search () {
         inputRef.current.focus();
     }
 
+    const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            document.getElementById('search-btn').click();
+        }
+    } 
+
     return (
         <div>
             <Tippy
                 interactive
                 visible = {showResult && searchResult.length > 0}
                 offset={[2, 2]}
-                placement='bottom'
+                placement='bottom-start'
                 render={(attrs) => (
                     <div tabIndex="-1" {...attrs}>
                         <PopperSearch>
@@ -59,12 +66,13 @@ function Search () {
                         value={valueInput}
                         onChange={(e) => setValueInput(e.target.value)}
                         onFocus={() => setShowResult(true)}
+                        onKeyPress={handleEnter}
                     />
                     {valueInput && <div className={cx('close')} onClick={handleDelete}>
                         <FontAwesomeIcon icon={faXmark}/>
                     </div>}
 
-                    <Button className={cx('search-btn')} smallest>
+                    <Button id="search-btn" to={searchPath} className={cx('search-btn')} smallest>
                         <SearchIcon />
                     </Button>
                 </div>

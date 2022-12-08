@@ -1,0 +1,55 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & .inner {
+        width: var(--default-layout-content-width);
+        padding: 0 24px;
+    }
+}
+
+.title {
+    width: 100%;
+    padding: 16px 0;
+
+    & .top {
+        display: flex;
+        height: 32px;
+        align-items: center;
+    }
+
+    & .bottom {
+        height: 24px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.back-home, .page {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.back-home {
+    color: #0f62fe!important;
+}
+
+.page {
+    color: #6f787e;
+}
+
+.slash {
+    color: #6f787e;
+    margin: 0 8px;
+}
+
+.content-search {
+    color: #0f1e29;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    letter-spacing: 0.015rem;
+    margin-right: 8px;
+}

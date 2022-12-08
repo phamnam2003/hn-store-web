@@ -3,7 +3,6 @@ import config from "~/config";
 
 // import Layouts
 import FooterOnly from "~/layouts/FooterOnly";
-import SearchLayout from "~/layouts/SearchLayout";
 
 //import Page
 import Home from "~/pages/Home";
@@ -18,7 +17,8 @@ const publicRoutes = [
     { path: config.routes.sale, component: FlashSale },
     { path: config.routes.cart, component: Cart },
     { path: config.routes.login, component: Login, layout: FooterOnly },
-    { path: config.routes.search, component: Search, layout: SearchLayout},
+    // { path: config.routes.register, component: Login, layout: FooterOnly },
+    { path: config.routes.search, component: Search},
     { path: config.routes.detailProduct, component: DetailProduct }
 ];
 
