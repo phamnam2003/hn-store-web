@@ -6,6 +6,7 @@ import axios from "axios";
 import Button from "~/components/Button";
 import config from "~/config";
 import styles from "./SearchPage.module.scss";
+import ProductItem from "~/components/ProductItem";
 
 const cx = classNames.bind(styles);
 
@@ -117,7 +118,27 @@ function Search () {
                         </div>
                     </div>
                     <div className={cx('result-search')}>
-                        
+                        {products.length > 0 ? (
+                            <div className={cx("body-search")}>
+                                { products.map(product => (
+                                    <Link 
+                                        to={`/products/${product.attributes.SEOURL}`} 
+                                        className={cx('item-product')} key = {product.id}
+                                    >
+                                    <ProductItem 
+                                        img_avatar={product.attributes.img_avatar}
+                                        name={product.attributes.name}
+                                        original_price={product.attributes.original_price}
+                                        percent_discount={product.attributes.percent_discount}
+                                        price={product.attributes.price}
+                                        sold={product.attributes.sold}
+                                        rate_product={product.attributes.rate_product}
+                                        adress={product.attributes.adress}
+                                        />
+                                    </Link>
+                                )) }
+                            </div>
+                        ) : <p className={cx('emty-result')}>Không có sản phẩm nào</p>}
                     </div>
                 </div>
            </div>

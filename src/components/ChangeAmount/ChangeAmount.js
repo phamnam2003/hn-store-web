@@ -24,14 +24,17 @@ function ChangeAmount () {
     }
 
     const handleDecrease = () => {
-        if (inputValue !== 1) {
+        if (inputValue > 1 ) {
             setInputValue(inputValue - 1)
         }
     }
 
     const handleIncrease = () => {
-        if (inputValue < 100) {
+        if (!!inputValue && inputValue < 100) {
             setInputValue(inputValue + 1)
+        }
+        if (!inputValue) {
+            setInputValue(1)
         }
     }
 
@@ -39,6 +42,7 @@ function ChangeAmount () {
         <div className={cx('wrapper')}>
             <Button action hover onClick={handleDecrease}><LessIcon/></Button>
             <Input 
+                type="number"
                 smallest
                 ref={inputRef}
                 value={inputValue}

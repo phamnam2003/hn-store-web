@@ -1,0 +1,24 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    & .header {
+        width: 100%;
+        background-color: var(--primary);
+        display: flex;
+        justify-content: center;
+    }
+
+    & .body {
+        width: 100%;
+    }
+}
+
+.title {
+    width: var(--default-layout-content-width);
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
