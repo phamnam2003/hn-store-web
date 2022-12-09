@@ -53,3 +53,131 @@
     letter-spacing: 0.015rem;
     margin-right: 8px;
 }
+
+.content {
+    width: 100%;
+    display: flex;
+
+    & .filter {
+        width: 206px;
+        max-height: 80vh;
+        overflow-y: auto;
+        margin-right: 24px;
+        background-color: var(--text-white);
+        box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+        border-radius: 8px;
+    }
+
+    & .result-search {
+        flex: 1;
+    }
+}
+
+.container {
+    width: 100%;
+    padding: 12px 4px;
+    border-bottom: 1px solid #dfdfdf;
+
+    & .topic {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.8rem;
+        color: #0f1e29;
+        margin-left: 12px;
+    }
+
+    & .body {
+        width: 100%;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        padding: 4px 8px 4px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f2f3f4;
+            font-weight: 700;
+        }
+    }
+
+    &:last-child {
+        border: none;
+    }
+}
+
+.check-box-adress {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.adress {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    cursor: pointer;
+    color: #3f4b53;
+}
+
+.content-filter-price {
+    width: 100%;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+
+    & .price-range {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+}
+
+.minimum-price, .maximum-price {
+    width: 79px;
+    height: 61px;
+
+    & .title-price {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-weight: 400;
+        color: #6f787e;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    & .input-price {
+        width: 100%;
+        height: 33px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px;
+
+        &:focus {
+            outline: 1px solid #0f62fe;
+        }
+    }
+}
+
+.suggest-price-filter {
+    margin-top: 12px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    color: #3a3e41;
+    background-color: #f2f3f4;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e7e8ea;
+        font-weight: 700;
+    }
+
+    &:last-child {
+        margin-bottom: 12px;
+    }
+}

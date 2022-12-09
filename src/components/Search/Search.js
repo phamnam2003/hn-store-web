@@ -18,15 +18,15 @@ function Search () {
     const [valueInput, setValueInput] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(false);
+    const searchPath = !!valueInput ? `/search?keyword=${valueInput}`: '';
 
     useEffect(() => {
         axios.get(`http://localhost:1337/api/products?filters[name][$containsi]=${valueInput}`)
             .then(res => setSearchResult(res.data.data))
             .catch(err => console.log(err))
     }, [valueInput])
-
+    
     const inputRef = useRef();
-    const searchPath = !!valueInput ? `/search?keyword=${valueInput}`: '';
 
     const handleDelete = () => {
         setValueInput('');
@@ -34,10 +34,12 @@ function Search () {
         inputRef.current.focus();
     }
 
-    const handleEnter = (e) => {
+    const handleKeyEnter = (e) => {
         if (e.key === 'Enter') {
             document.getElementById('search-btn').click();
+            setShowResult(false);
         }
+        else setShowResult(true);
     } 
 
     return (
@@ -45,7 +47,7 @@ function Search () {
             <Tippy
                 interactive
                 visible = {showResult && searchResult.length > 0}
-                offset={[2, 2]}
+                offset={[0, 3]}
                 placement='bottom-start'
                 render={(attrs) => (
                     <div tabIndex="-1" {...attrs}>
@@ -66,7 +68,7 @@ function Search () {
                         value={valueInput}
                         onChange={(e) => setValueInput(e.target.value)}
                         onFocus={() => setShowResult(true)}
-                        onKeyPress={handleEnter}
+                        onKeyPress={handleKeyEnter}
                     />
                     {valueInput && <div className={cx('close')} onClick={handleDelete}>
                         <FontAwesomeIcon icon={faXmark}/>
