@@ -7,7 +7,7 @@ import Input from "~/components/Input";
 import config from "~/config";
 import FacebookLogo from "~/assets/image/FacebookLogo.png";
 import GoogleLogo from "~/assets/image/GoogleLogo.png";
-import AppleLogo from "~/assets/image/AppleLogo.png";
+import AppleLogo from "~/assets/image/AppleLogo.jfif";
 
 import styles from "./Login.module.scss";
 
@@ -57,7 +57,7 @@ function Login () {
                                     placeholder="Số điện thoại / Email / Tên đăng nhập"
                                     className={cx('input')}
                                 />
-                                <p className={cx('error')}>Lỗi tài khoản</p>
+                                {/* <p className={cx('error')}>Lỗi tài khoản</p> */}
                             </div>
 
                             <div className={cx('password')}>
@@ -74,7 +74,7 @@ function Login () {
                                     </div>
                                 </div>
 
-                                <p className={cx('error')}>Đăng nhập không thành công, mời bạn kiểm tra lại thông tin hoặc thay đổi cách thức đăng nhập</p>
+                                {/* <p className={cx('error')}>Đăng nhập không thành công, mời bạn kiểm tra lại thông tin hoặc thay đổi cách thức đăng nhập</p> */}
                             </div>
 
                             <Button primary large>Đăng nhập</Button>
