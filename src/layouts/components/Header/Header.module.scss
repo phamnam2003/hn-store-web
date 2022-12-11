@@ -97,3 +97,25 @@
         margin-right: 8px;
     }
 }
+
+.feature {
+    width: 200px;
+    padding: 4px 12px;
+    color: #0f1e29;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f2f3f4;
+        color: #3f4b53;
+        font-weight: 700;
+    }
+}
+
+.strike-through {
+    border-top: 1px solid #e6e6e6;
+    margin: 8px 0;
+}

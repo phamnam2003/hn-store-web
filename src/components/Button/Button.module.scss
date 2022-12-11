@@ -44,9 +44,10 @@
 }
 
 .disabled {
+    width: 100%;
+    height: 44px;
     cursor: not-allowed;
-    background-color: #f2f3f4;
-    color: #b7bbbf;
+    opacity: 0.5;
 }
 
 .normal {
@@ -109,6 +110,17 @@
     }
 }
 
+.account {
+    min-width: 105px;
+    background-color: var(--text-white);
+    border-radius: 8px;
+    height: 32px;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    color: #0f1e29;
+    font-weight: 700;
+}
+
 // Size button
 .largest {
     width: 353.5px;
@@ -122,6 +134,8 @@
     max-width: 428px;
     height: 44px;
     padding: 10px 16px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
 }
 
 .medium {

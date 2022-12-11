@@ -115,19 +115,6 @@
     margin-bottom: 16px;
 }
 
-.top-action {
-    display: flex;
-    justify-content: space-between;
-
-    & .text-action-link {
-        font-size: 1.2rem;
-        line-height: 1.6rem;
-        color: #05a;
-        cursor: pointer;
-    }
-    margin: 8px 0;
-}
-
 .text-middle-action {
     padding: 8px;
     text-transform: uppercase;

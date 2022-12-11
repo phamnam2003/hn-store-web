@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from './Button.module.scss';
+import { forwardRef } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -19,12 +20,13 @@ function Button ({
     large = false, 
     largest = false,
     medium = false,
+    account = false,
     disabled,
     className, 
     children, 
     onClick,
     ...passProp
-    }) {
+    }, ref) {
     
     let Comp = 'button';
     const _props = {
@@ -62,14 +64,15 @@ function Button ({
         largest,
         medium,
         disabled,
+        account,
         [className]: className
     })
 
     return (
-        <Comp className={classes} {..._props}>
+        <Comp className={classes} ref={ref} {..._props}>
             {children}
         </Comp>
     )
 }
 
-export default Button;
+export default forwardRef(Button);

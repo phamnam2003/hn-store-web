@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import Button from "~/components/Button";
 import { LogoIcon } from "~/components/Icons";
@@ -10,6 +11,7 @@ import GoogleLogo from "~/assets/image/GoogleLogo.png";
 import AppleLogo from "~/assets/image/AppleLogo.jfif";
 
 import styles from "./Login.module.scss";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 const LOGIN_OTHER = [
@@ -31,12 +33,47 @@ const LOGIN_OTHER = [
 ]
 
 function Login () {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [showError, setShowError] = useState(false);
+    const navigate = useNavigate();
+
+    const handleEnter = (e) => {
+        if (username && password && e.key === "Enter") {
+            document.getElementById('login').click();
+        }
+    }
+
+    const handleLogin = () => {
+        axios.post('http://localhost:1337/api/auth/local', {
+            identifier: username,
+            password: password
+        })
+            .then(res => {
+                setShowError(false);
+
+                // set item in localStorage for change UI header and can add product 
+                localStorage.setItem('jwt', res.data.jwt);
+                // user info
+                localStorage.setItem('userinfo', JSON.stringify(res.data.user));
+                navigate('/', { replace: true });
+            })
+
+            .catch(err => {
+                console.log(err.response);
+                setShowError(true);
+                setPassword('');
+            });
+    }
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
                 <div className={cx('title')}>
                         <div className={cx('top-left')}>
-                            <LogoIcon />
+                            <Link to={config.routes.home}>
+                                <LogoIcon />
+                            </Link>
                             <p className={cx('page')}>Đăng nhập</p>
                         </div>
                         <p className={cx('helper')}>Bạn cần giúp đỡ?</p>
@@ -50,14 +87,16 @@ function Login () {
                             <p className={cx('title-form')}>Xin chào,</p>
                             <p className={cx('desc')}>Đăng nhập tài khoản để dễ dàng mua sản phẩm từ HN Store cũng như nhận được nhiều ưu đãi</p>
                         </div>
-                        <form className={cx('middle-form')}>
+                        <div className={cx('middle-form')}>
                             <div className={cx('user-input')}>
                                 <Input 
                                     login 
                                     placeholder="Số điện thoại / Email / Tên đăng nhập"
                                     className={cx('input')}
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    autoComplete='off'
                                 />
-                                {/* <p className={cx('error')}>Lỗi tài khoản</p> */}
                             </div>
 
                             <div className={cx('password')}>
@@ -67,17 +106,19 @@ function Login () {
                                         placeholder="Mật khẩu"
                                         type="password"
                                         className={cx('input')}
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        onKeyPress={handleEnter}
+                                        autoComplete='off'
                                     />
-
-                                    <div className={cx('change-type')}>
-                                        
-                                    </div>
                                 </div>
 
-                                {/* <p className={cx('error')}>Đăng nhập không thành công, mời bạn kiểm tra lại thông tin hoặc thay đổi cách thức đăng nhập</p> */}
+                                { showError && <p className={cx('error')}>Thông tin tài khoản, mật khẩu không chính xác. Vui lòng kiểm tra lại thông tin đăng nhập</p> }
                             </div>
 
-                            <Button primary large>Đăng nhập</Button>
+                            { !!username && !!password ? (
+                                <Button primary large onClick={handleLogin} id='login'>Đăng nhập</Button>
+                            ) : <Button primary disabled>Đăng nhập</Button> }
                             <div className={cx('action-other')}>
                                 <div className={cx('top-action')}>
                                     <p className={cx('text-action-link')}>Quên mật khẩu</p>
@@ -95,7 +136,7 @@ function Login () {
 
                                 </div>
                             </div>
-                        </form>
+                        </div>
                         <div className={cx('bottom-form')}>
                             <p className={cx('asked-user')}>Bạn mới biết đến HN Store?</p>
                             <Link to={config.routes.register} className={cx('redirect-register')}>Đăng kí</Link>
