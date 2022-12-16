@@ -516,3 +516,49 @@ export const WarningIcon = ({ width="1.2rem", height="1.2rem", className }) => (
         </path>
     </svg>
 )
+
+export const VoucherIcon = ({ width="2.4rem", height="2.4rem", className }) => (
+    <svg 
+        width={width}
+        height={height}
+        viewBox="0 0 24 24" 
+        xmlns="http://www.w3.org/2000/svg" 
+        version="1.1"
+        className={className}
+    >
+        <g fill="none" fillRule="nonzero">
+            <path fill="#CFD2D4" d="M14 6h7v12h-7z">
+            </path>
+            <path d="M21 4a2 2 0 012 2v3.112l-.5.289A2.998 2.998 0 0021 12c0 1.084.579 2.066 1.5 2.6l.5.288V18a2 2 0 01-2 2H3a2 2 0 01-2-2v-3.112l.5-.289A2.998 2.998 0 003 12a2.998 2.998 0 00-1.5-2.6L1 9.113V6a2 2 0 012-2h18zm0 2l-6-.001a1 1 0 01-.883.994L14 7a1 1 0 01-1-1.001L3 6v2c1.241.93 2 2.4 2 4s-.759 3.07-2 4v2l10-.001a1 1 0 011.993-.116L15 18 21 18v-2c-1.241-.93-2-2.4-2-4s.759-3.07 2-4V6zm-7 8a1 1 0 110 2 1 1 0 010-2zm0-3a1 1 0 110 2 1 1 0 010-2zm0-3a1 1 0 110 2 1 1 0 010-2z" 
+                fill="#6F787E">
+            </path>
+        </g>
+    </svg>
+)
+
+export const ChatIcon = ({ width="1.6rem", height="1.6rem", className }) => (
+    <svg 
+        width={width} 
+        height={height} 
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg" 
+        version="1.1" 
+        className={className}
+    >
+        <path d="M20 2a2 2 0 012 2v12a2 2 0 01-2 2h-7.913L6 21.804V18H4a2 2 0 01-2-2V4a2 2 0 012-2h16zm0 2H4v12h4v2.196L11.513 16H20V4zm-6 7v2H7v-2h7zm2-4v2H7V7h9z" fill="#6F787E" fillRule="nonzero">
+        </path>
+    </svg>
+)
+
+export const GarbageIcon = ({ width="1.6rem", height="1.6rem", className }) => (
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24" 
+        version="1.1" className={className}
+    >
+        <path d="M14 1c.537 0 1.042.214 1.414.586.308.307.509.708.575 1.211L16 3v1h2.5a2.49 2.49 0 011.623.599l.145.133c.404.405.66.937.723 1.564L21 6.5V9h-1.111l-.62 11.166a2.997 2.997 0 01-.789 1.866l-.145.147c-.49.463-1.12.75-1.844.812l-.218.009H7.727a2.994 2.994 0 01-2.975-2.616l-.02-.218L4.11 9H3V6.5c0-.671.267-1.303.732-1.768.405-.404.937-.66 1.564-.723L5.5 4H8V3c0-.477.169-.93.468-1.285l.118-.13c.307-.307.708-.508 1.211-.574L10 1zm3.885 8H6.114l.611 11.012.012.132c.032.224.14.428.303.582a.99.99 0 00.687.274h8.503l.132-.004a.994.994 0 00.598-.27.996.996 0 00.312-.67L17.885 9zM9 11a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zm3 0a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zm3 0a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zM8 5.998H5.55l-.102.005A.495.495 0 005 6.5V7h14.001v-.45l-.004-.102A.495.495 0 0018.5 6H8v-.002zm2.067-3L10 3v1h4.001l.001-.933L14 3l-3.932-.002z" fill="#6F787E" fillRule="nonzero">
+        </path>
+    </svg>
+)

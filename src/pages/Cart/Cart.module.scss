@@ -1,0 +1,124 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+
+    & .inner {
+        width: var(--default-layout-content-width);
+        padding: 0 24px;
+    }
+}
+
+.top {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    color: #0f1e29;
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+
+    & .left {
+        width: 66.258%;
+        background-color: var(--text-white);
+        padding: 6px 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+        box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+    }
+
+    & .right {
+        flex: 1;
+        max-height: 183px;
+        background-color: var(--text-white);
+        margin-left: 8px;
+        padding: 16px;border-radius: 4px;
+        box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+    }
+}
+
+.voucher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+
+    & .left-voucher {
+        height: 24px;
+        display: flex;
+        align-items: center;
+
+        & .text-code {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            font-weight: 700;
+            margin-left: 8px;
+            color: #0f1e29;
+        }
+    }
+
+    & .right-voucher {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-weight: 400;
+        color: #0f62fe;
+        cursor: pointer;
+    }
+}
+
+.pay {
+    width: 100%;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+
+    & .text {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: #0f1e29;
+        font-weight: 400;
+    }
+
+    & .money {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        font-weight: 700;
+        color: #0F1E26;
+    }
+}
+
+.empty-cart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .img-cart-empty{
+        width: 375px;
+        height: 210px;
+        object-fit: cover;
+    }
+
+    & .title-empty {
+        margin-top: 24px;
+        margin-bottom: 8px;
+        color: #0f1e29;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.2rem;
+    }
+
+    & .desc-empty {
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+        color: #6f787e;
+        margin: 4px 0 32px;
+    }
+}

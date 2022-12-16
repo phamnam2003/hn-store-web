@@ -30,7 +30,7 @@
 // type button
 .primary {
     background-color: var(--primary);
-    color: var(--text-white);
+    color: var(--text-white)!important;
     font-size: 1.4rem;
     line-height: 1.9;
     font-weight: 700;
