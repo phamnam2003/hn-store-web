@@ -12,6 +12,15 @@
         display: flex;
         flex-direction: column;
     }
+
+    & .loading {
+        width: var(--body-width);
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .title {
@@ -110,3 +119,5 @@
 .discount-percent {
     color: var(--price-color);
 }
+
+//loading 
