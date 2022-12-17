@@ -17,7 +17,7 @@ function Cart () {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:1337/api/products?pagination[start]=3&pagination[limit]=1')
+        axios.get('http://localhost:1337/api/products?pagination[start]=5&pagination[limit]=2')
             .then(res => {
                 setProducts(res.data.data);
             })

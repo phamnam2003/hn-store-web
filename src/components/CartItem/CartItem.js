@@ -1,15 +1,25 @@
+import Tippy from "@tippyjs/react";
 import classNames from "classnames/bind";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import Button from "../Button";
 import ChangeAmount from "../ChangeAmount";
 import { ArrowIcon, ChatIcon, GarbageIcon, HeartIcon, VoucherIcon } from "../Icons";
 import Input from "../Input";
+import PopperCart from "../Popper/PopperCart";
 
 import styles from "./CartItem.module.scss";
 
 const cx = classNames.bind(styles);
 
 function CartItem ({ shop_icon, shop_name, img_avatar, name , size, color, original_price, price, SEOURL }) {
+    
+    const sizes = size.toString().split(',');
+    const colors = color.toString().split(',');
+    const [currentSize, setCurrentSize] = useState(sizes[0]);
+    const [lastSize, setLastSize] = useState(sizes[0]);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('top')}>
@@ -34,10 +44,69 @@ function CartItem ({ shop_icon, shop_name, img_avatar, name , size, color, origi
                             <Link to={`/products/${SEOURL}`} className={cx('name-product')}>
                                 {name.toString().substring(0, 40)}...
                             </Link>
-                            <div className={cx('size-and-color')}>
-                                { size && <p className={cx('size')}>{size}</p> }
-                                { color && <p className={cx('color')}>{color}</p> }
-                            </div>
+                            
+                            <Tippy
+                                interactive
+                                trigger="click"
+                                offset={[0, 7]}
+                                placement="bottom"
+                                render={attrs => (
+                                    <div {...attrs}>
+                                        <PopperCart>
+                                            { size && (
+                                                
+                                                <div>
+                                                    <div className={cx('current-size')}>
+                                                        <p className={cx('title')}>Chọn kích thước:</p>
+                                                        <div className={cx('content')}>{currentSize}</div>
+                                                    </div>
+                                                    
+                                                    <div className={cx('list-size')}>
+                                                        { sizes.map(size => (
+                                                            <p 
+                                                                key={size} 
+                                                                className={cx('pick-size')} 
+                                                                onClick={() => setCurrentSize(size)}
+                                                            >
+                                                                {size}
+                                                            </p>
+                                                        )) }
+                                                    </div>
+
+                                                </div>
+                                                
+                                            ) }
+                                            { color && (
+                                                
+                                                <div>
+                                                    <div className={cx('current-color')}>
+                                                            <p className={cx('title')}>Màu sắc:</p>
+                                                            <p className={cx('content')}>{colors[0]}</p>
+                                                    </div>
+                                                </div>
+
+                                            ) }
+                                            <div className={cx('unit-price')}>
+                                                <p className={cx('title')}>Đơn giá:</p>
+                                                <p className={cx('price')}>{price}đ</p>
+                                            </div>
+                                            <Button primary large 
+                                                onClick={() => setLastSize(currentSize)}
+                                            >
+                                                Cập nhật
+                                            </Button>
+                                        </PopperCart>
+                                    </div>
+                                )}
+                            >
+                                { price && color ? (
+                                    <div className={cx('size-and-color')}>
+                                        { size && <p className={cx('size')}>{lastSize}</p> }
+                                        { color && <p className={cx('color')}>{colors[0]}</p> }
+                                    </div>
+                                ) : <></> }
+                            </Tippy>
+
                         </div>
                     </div>
                 </div>

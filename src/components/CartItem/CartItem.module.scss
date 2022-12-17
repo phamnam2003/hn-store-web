@@ -4,7 +4,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background-color: var(--text-white);
+    border-radius: 4px;
+    box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
     
     & .top {
         width: 100%;
@@ -17,6 +21,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        padding: 10px 0;
     }
 
     & .bottom {
@@ -38,6 +43,7 @@
         height: 24px;
         border-radius: 50%;
         object-fit: cover;
+        cursor: pointer;
     }
 
     & .shop-name {
@@ -46,6 +52,7 @@
         color: #0f1e29;
         margin-left: 8px;
         font-weight: 700;
+        cursor: pointer;
     }
 }
 
@@ -129,7 +136,25 @@
         border: 1px solid #cfd2d4;
         border-radius: 4px;
         padding: 4px 12px;
+
+        &:hover {
+            border-color: #3f81fe;
+            cursor: pointer;
+        }
     }
+}
+
+.size, .color {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: #0f1e29;
+    font-weight: 400;
+}
+
+.color {
+    border-left: 1px solid #414141;
+    margin-left: 8px;
+    padding-left: 8px;
 }
 
 .money {
@@ -185,5 +210,62 @@
 
     &:hover {
         color: var(--primary);
+    }
+}
+
+.current-size, .current-color {
+    width: 100%;
+    display: flex;
+    padding: 6px;
+}
+
+.current-color {
+    margin-bottom: 20px;
+}
+
+.list-size {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: #6f787e;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    height: 43px;
+
+    & .pick-size {
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    & .pick-size:first-child {
+        padding-left: 0;
+    }
+}
+
+.title, .content {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #0f1e29;
+    font-weight: 400;
+}
+
+.title {
+    margin-right: 8px;
+}
+
+.content {
+    font-weight: 700;
+}
+
+.unit-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+
+    & .price {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #0f1e29;
+        line-height: 1.8rem;
     }
 }
