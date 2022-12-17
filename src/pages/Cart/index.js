@@ -17,7 +17,7 @@ function Cart () {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:1337/api/products?pagination[start]=0&pagination[limit]=2')
+        axios.get('http://localhost:1337/api/products?pagination[start]=3&pagination[limit]=1')
             .then(res => {
                 setProducts(res.data.data);
             })
@@ -47,6 +47,7 @@ function Cart () {
                                             color={!!product.attributes.color ? product.attributes.color: ""}
                                             original_price={!!product.attributes.original_price ? product.attributes.original_price: ""}
                                             price={product.attributes.price}
+                                            SEOURL={product.attributes.SEOURL}
                                         />
 
                                     )) }

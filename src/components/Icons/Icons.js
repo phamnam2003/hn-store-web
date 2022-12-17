@@ -553,8 +553,8 @@ export const ChatIcon = ({ width="1.6rem", height="1.6rem", className }) => (
 export const GarbageIcon = ({ width="1.6rem", height="1.6rem", className }) => (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
+        width={width} 
+        height={height} 
         viewBox="0 0 24 24" 
         version="1.1" className={className}
     >

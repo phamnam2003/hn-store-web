@@ -97,7 +97,9 @@ function ShoppingProduct ({ product }) {
                                 ) : <></> }
                                 <div className={cx('amount')}>
                                     <div className={cx('text')}>Chọn số lượng:</div>
-                                    <ChangeAmount />
+                                    <div className={cx('number')}>
+                                        <ChangeAmount />
+                                    </div>
                                 </div>
                                 <div className={cx('button-action')}>
                                     <Button largest hover>Thêm vào giỏ hàng</Button>

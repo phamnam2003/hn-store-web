@@ -61,11 +61,11 @@
 }
 
 .action {
+    max-width: 32px;
+    max-height: 32px;
     background-color: #e7e8ea;
     color: #6F787E;
-    width: 32px;
-    height: 32px;
-    margin-right: 12px;
+    padding: 7px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
