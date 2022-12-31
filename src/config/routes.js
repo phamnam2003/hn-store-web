@@ -5,7 +5,9 @@ const routes = {
     login: '/login',
     register: '/register',
     detailProduct: '/products/:SEOURL',
-    search: '/search'
+    search: '/search',
+    errorPage: '/:anyone',
+    errorPageLv2: '/:anyone/:anyone'
 }
 
 export default routes;
