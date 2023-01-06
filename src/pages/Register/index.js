@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useState } from "react";
 
 import Button from "~/components/Button";
 import { LogoIcon } from "~/components/Icons";
@@ -9,9 +10,8 @@ import config from "~/config";
 import FacebookLogo from "~/assets/image/FacebookLogo.png";
 import GoogleLogo from "~/assets/image/GoogleLogo.png";
 import AppleLogo from "~/assets/image/AppleLogo.jfif";
-
 import styles from "./Register.module.scss";
-import { useState } from "react";
+
 
 const cx = classNames.bind(styles);
 const LOGIN_OTHER = [
@@ -97,7 +97,15 @@ function Register () {
 
                 // Save by localStorage for auto login after register
                 localStorage.setItem('jwt', res.data.jwt);
-                localStorage.setItem('userinfo', JSON.stringify(res.data.user))
+                localStorage.setItem('userinfo', JSON.stringify(res.data.user));
+
+                fetch(`http://localhost:1337/api/cart/create`, {
+                        method: 'GET',
+                        headers: new Headers({
+                            'Authorization': 'Bearer ' + localStorage.jwt,
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        })
+                    });
                 navigate('/', { replace: true });
             })
 

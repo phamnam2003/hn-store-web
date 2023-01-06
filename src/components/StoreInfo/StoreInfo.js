@@ -27,6 +27,7 @@ const SUGGEST_PRODUCT = [
 ]
 
 function StoreInfo ({ product }) {
+    
     return (
         <div className={cx('wrapper')}>
             { product.map(info => (

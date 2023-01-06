@@ -562,3 +562,32 @@ export const GarbageIcon = ({ width="1.6rem", height="1.6rem", className }) => (
         </path>
     </svg>
 )
+
+export const HandleCartLoading = ({ width= '2.4rem', height= '2.4rem', className }) => (
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width={width} 
+        height={height} 
+        viewBox="0 0 24 24" 
+        version="1.1" 
+        className= {className}
+    >
+        <path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1zm1.004 8.998h-3.001v2h1v2h-1v2h4v-2h-1v-4zm-1.004-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" 
+            fill="#133096" fillRule="nonzero">
+        </path>
+    </svg>
+)
+
+export const  HandleCartSuccess = ({ width = "2.4rem", height= "2.4rem", className }) => (
+    <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width={width} 
+        height={height} 
+        viewBox="0 0 12 12" 
+        version="1.1" 
+        className = {className}
+    >
+        <path fill="#008A0E" d="M6 1a5 5 0 1 1-.001 10.001A5 5 0 0 1 6 1zm1.497 3.315L5.09 6.721 4.049 5.679l-.643.642L5.09 8.006l3.05-3.048-.643-.643z">
+        </path>
+    </svg>
+)

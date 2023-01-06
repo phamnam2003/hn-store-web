@@ -2,21 +2,53 @@ import classNames from "classnames/bind";
 
 import styles from "./ShoppingProduct.module.scss";
 import Button from "../Button";
-import { HeartIcon, InfoIcon, ShareIcon, ShieldIcon } from "../Icons";
+import { HandleCartLoading, HandleCartSuccess, HeartIcon, InfoIcon, ShareIcon, ShieldIcon } from "../Icons";
 import ShopPlus from "~/assets/image/ShopPlus.png";
 import AppMobile from "~/assets/image/AppMobile.png";
 import Installment from "~/assets/image/Installment.png";
 import ChangeAmount from "~/components/ChangeAmount";
+import { useState } from "react";
+import NotificationCart from "../NotificationCart";
 
 const cx = classNames.bind(styles);
 
 function ShoppingProduct ({ product }) {
     let IMG_DESC, COLOR, SIZE;
 
+    const [showNotification, setShowNotification] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
     if (product.length > 0) {
         IMG_DESC = product.map(info => info.attributes.img_desc).toString().split(",");
         COLOR = product.map(info =>  !!info.attributes.color ? info.attributes.color : "").toString().split(",");
         SIZE = product.map(info =>  !!info.attributes.size ? info.attributes.size : "").toString().split(",");
+    }
+
+    const addIntoCart = (product_id) => {
+        fetch(`http://localhost:1337/api/cart/add/${product_id}`, {
+            method: "GET", 
+            headers: new Headers({
+                'Authorization': 'Bearer ' + localStorage.jwt,
+                'Content-type': 'application/x-www-form-urlencoded'
+            })
+        })
+            .then(res => res.text())
+            .then(data => {
+                console.log(data);
+                // setIsLoading(false);
+                setShowNotification(true);
+
+                setTimeout(() => {
+                    setIsLoading(false)
+                }, 1000)
+                setTimeout(() => {
+                    setShowNotification(false);
+                }, 3000)
+            })
+            .catch(err => {
+                setIsLoading(false);
+                console.log(err);
+            })
     }
 
     return (
@@ -102,7 +134,7 @@ function ShoppingProduct ({ product }) {
                                     </div>
                                 </div>
                                 <div className={cx('button-action')}>
-                                    <Button largest hover>Thêm vào giỏ hàng</Button>
+                                    <Button largest hover onClick={() => addIntoCart(info.id)}>Thêm vào giỏ hàng</Button>
                                     <Button primary largest>Mua ngay</Button>
                                 </div>
                             </div>
@@ -145,6 +177,16 @@ function ShoppingProduct ({ product }) {
                     </div>
                 )) }
             </div>
+            
+            { showNotification && (
+                <div className={cx('notification-cart-wrapper')}>
+                    <NotificationCart 
+                        content = { isLoading ? "Đang xử lí..." : "Thêm vào giỏ hàng thành công!" }
+                        icon = { isLoading ? <HandleCartLoading /> : <HandleCartSuccess /> }    
+                    />
+                </div>
+            ) }
+
         </div>
     )
 }

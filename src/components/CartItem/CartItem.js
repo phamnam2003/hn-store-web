@@ -99,7 +99,7 @@ function CartItem ({ shop_icon, shop_name, img_avatar, name , size, color, origi
                                     </div>
                                 )}
                             >
-                                { price && color ? (
+                                { price || color ? (
                                     <div className={cx('size-and-color')}>
                                         { size && <p className={cx('size')}>{lastSize}</p> }
                                         { color && <p className={cx('color')}>{colors[0]}</p> }

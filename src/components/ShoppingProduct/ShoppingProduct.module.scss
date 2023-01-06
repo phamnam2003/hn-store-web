@@ -2,10 +2,17 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
 
     & .inner {
         width: var(--default-layout-content-width);
         padding: 0 24px;
+    }
+
+    & .notification-cart-wrapper {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
     }
 }
 

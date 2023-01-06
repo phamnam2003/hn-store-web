@@ -18,17 +18,22 @@ function Cart () {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading]= useState(true);
 
+    const configHeader = {
+        headers: { Authorization: `Bearer ${jwt}` }
+    }
+
     useEffect(() => {
-        axios.get('http://localhost:1337/api/products?pagination[start]=5&pagination[limit]=3')
+        axios.get('http://localhost:1337/api/cart/get', configHeader)
             .then(res => {
-                setProducts(res.data.data);
+                setProducts(res.data);
                 setIsLoading(false);
             })
             .catch(err => {
                 setIsLoading(false);
                 console.log(err);
             })
-    }, [])
+            // eslint-disable-next-line
+    }, []);
 
     if (!isLoading) {
         return (
@@ -44,15 +49,15 @@ function Cart () {
                                         { products.map(product => (
     
                                             <CartItem key={product.id}
-                                                shop_icon={product.attributes.shop_icon}
-                                                shop_name={product.attributes.shop_name}
-                                                img_avatar={product.attributes.img_avatar}
-                                                name={product.attributes.name}
-                                                size={!!product.attributes.size ? product.attributes.size : ""}
-                                                color={!!product.attributes.color ? product.attributes.color: ""}
-                                                original_price={!!product.attributes.original_price ? product.attributes.original_price: ""}
-                                                price={product.attributes.price}
-                                                SEOURL={product.attributes.SEOURL}
+                                                shop_icon={product.shop_icon}
+                                                shop_name={product.shop_name}
+                                                img_avatar={product.img_avatar}
+                                                name={product.name}
+                                                size={!!product.size ? product.size : ""}
+                                                color={!!product.color ? product.color: ""}
+                                                original_price={!!product.original_price ? product.original_price: ""}
+                                                price={product.price}
+                                                SEOURL={product.SEOURL}
                                             />
     
                                         )) }
