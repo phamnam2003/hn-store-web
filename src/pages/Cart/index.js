@@ -18,22 +18,37 @@ function Cart () {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading]= useState(true);
 
-    const configHeader = {
-        headers: { Authorization: `Bearer ${jwt}` }
-    }
-
     useEffect(() => {
+        const configHeader = {
+            headers: { Authorization: `Bearer ${jwt}` }
+        }
         axios.get('http://localhost:1337/api/cart/get', configHeader)
             .then(res => {
                 setProducts(res.data);
                 setIsLoading(false);
+                window.scrollTo({ top: 0, behavior: "smooth" })
             })
             .catch(err => {
                 setIsLoading(false);
                 console.log(err);
+            });
+    }, [jwt]);
+
+    const handleRefreshApi = () => {
+        const configHeader = {
+            headers: { Authorization: `Bearer ${jwt}` }
+        }
+        axios.get('http://localhost:1337/api/cart/get', configHeader)
+            .then(res => {
+                setProducts(res.data);
+                setIsLoading(false);
+                window.scrollTo({ top: 0, behavior: "smooth" })
             })
-            // eslint-disable-next-line
-    }, []);
+            .catch(err => {
+                setIsLoading(false);
+                console.log(err);
+            });
+    }
 
     if (!isLoading) {
         return (
@@ -49,6 +64,7 @@ function Cart () {
                                         { products.map(product => (
     
                                             <CartItem key={product.id}
+                                                id = {product.id}
                                                 shop_icon={product.shop_icon}
                                                 shop_name={product.shop_name}
                                                 img_avatar={product.img_avatar}
@@ -58,6 +74,7 @@ function Cart () {
                                                 original_price={!!product.original_price ? product.original_price: ""}
                                                 price={product.price}
                                                 SEOURL={product.SEOURL}
+                                                reloadProduct = {handleRefreshApi}
                                             />
     
                                         )) }

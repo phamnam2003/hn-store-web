@@ -1,7 +1,8 @@
-import Tippy from "@tippyjs/react";
+import Tippy from "@tippyjs/react/headless";
+import "tippy.js/dist/tippy.css";
 import classNames from "classnames/bind";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Button from "../Button";
 import ChangeAmount from "../ChangeAmount";
@@ -13,12 +14,35 @@ import styles from "./CartItem.module.scss";
 
 const cx = classNames.bind(styles);
 
-function CartItem ({ shop_icon, shop_name, img_avatar, name , size, color, original_price, price, SEOURL }) {
-    
+function CartItem ({ id, shop_icon, shop_name, img_avatar, name , size, color, original_price, 
+    price, SEOURL, reloadProduct }) {
+    const jwt = localStorage.jwt;
     const sizes = size.toString().split(',');
     const colors = color.toString().split(',');
+
     const [currentSize, setCurrentSize] = useState(sizes[0]);
     const [lastSize, setLastSize] = useState(sizes[0]);
+
+    const navigate = useNavigate();
+
+    const configHeader = {
+        method: "GET",
+        headers: new Headers({
+            Authorization: `Bearer ${jwt}`
+        })
+    }
+
+    const handleRemove = (product_id) => {
+        fetch(`http://localhost:1337/api/cart/remove/${product_id}`, configHeader)
+            .then(res => {
+                res.json();
+            })
+            .then(res => {
+                reloadProduct();
+                navigate("/cart", { replace: true });
+            })
+            .catch(err => console.log(err));
+    } 
 
     return (
         <div className={cx('wrapper')}>
@@ -99,7 +123,7 @@ function CartItem ({ shop_icon, shop_name, img_avatar, name , size, color, origi
                                     </div>
                                 )}
                             >
-                                { price || color ? (
+                                { size || color ? (
                                     <div className={cx('size-and-color')}>
                                         { size && <p className={cx('size')}>{lastSize}</p> }
                                         { color && <p className={cx('color')}>{colors[0]}</p> }
@@ -112,12 +136,16 @@ function CartItem ({ shop_icon, shop_name, img_avatar, name , size, color, origi
                 </div>
                 <div className={cx('money')}>
                     <p className={cx('price')}>{price}đ</p>
-                    <p className={cx('original-price')}>{original_price}đ</p>
+                    { original_price && <p className={cx('original-price')}>{original_price}đ</p> } 
                 </div>
                 <div className={cx('amount')}><ChangeAmount/></div>
                 <div className={cx('action')}>
-                    <Button className={cx('btn-action')}><HeartIcon/></Button>
-                    <Button className={cx('btn-action')}><GarbageIcon/></Button>
+                    <Tippy content = "Yêu thích">
+                        <Button className={cx('btn-action')}><HeartIcon/></Button>
+                    </Tippy>
+                    <Tippy content = "Xóa">
+                        <Button className={cx('btn-action')} onClick = {() => handleRemove(id)}><GarbageIcon/></Button>
+                    </Tippy>
                 </div>
             </div>
             <div className={cx('bottom')}>

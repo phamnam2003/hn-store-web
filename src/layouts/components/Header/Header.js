@@ -10,6 +10,8 @@ import config from '~/config';
 import { CartIcon, LogoIcon } from '~/components/Icons';
 import ProductType from '~/components/ProductType';
 import Search from '~/components/Search';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const cx = classNames.bind(styles);
 
@@ -18,12 +20,28 @@ function Header () {
     const userinfo = localStorage.userinfo === undefined ? localStorage.userinfo : JSON.parse(localStorage.userinfo);
 
     const navigate = useNavigate();
+    const [numberOrder, setNumberOrder] = useState(0);
 
     const handleLogout = () => {
         localStorage.removeItem('jwt');
         localStorage.removeItem('userinfo');
         navigate('/');
     }
+    // eslint-disable-next-line
+    const configHeader = {
+        headers: {
+            Authorization: `Bearer ${jwt}`
+        }
+    }
+
+    useEffect(() => {
+        axios.get(`http://localhost:1337/api/cart/get`, configHeader)
+            .then(res => {
+                setNumberOrder(res.data.length);
+            })
+            .catch(err => console.log(err));
+    // eslint-disable-next-line
+    }, [configHeader])
 
     return (
         <header className={cx('wrapper')}>
@@ -108,6 +126,7 @@ function Header () {
                         <div className={cx('right')}>
                             <Link to={config.routes.cart} className={cx('cart')}>
                                 <CartIcon />
+                                { numberOrder > 0 && <div className={cx('number-order')}>{numberOrder}</div> }
                             </Link>
                             { !jwt ? (
                                 <Link to={config.routes.login} className={cx('login')}>

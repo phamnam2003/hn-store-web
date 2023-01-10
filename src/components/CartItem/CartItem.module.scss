@@ -9,6 +9,7 @@
     background-color: var(--text-white);
     border-radius: 4px;
     box-shadow: 0 -2px 8px 0 rgb(0 0 0 / 2%), 0 4px 8px 0 rgb(0 0 0 / 2%);
+    position: relative;
     
     & .top {
         width: 100%;
@@ -29,6 +30,12 @@
         height: 44px;
         display: flex;
         align-items: center;
+    }
+
+    & .notification {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
     }
 }
 

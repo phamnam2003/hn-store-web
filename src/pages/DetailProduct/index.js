@@ -21,6 +21,7 @@ function DetailProduct () {
         axios.get(`http://localhost:1337/api/products?filters[SEOURL][$eq]=${SEOURL}`)
             .then(res => {
                 setProduct(res.data.data);
+                window.scrollTo({ top: 0})
                 setIsLoading(false);
             })
             .catch(err => {

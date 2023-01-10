@@ -9,6 +9,7 @@ import Installment from "~/assets/image/Installment.png";
 import ChangeAmount from "~/components/ChangeAmount";
 import { useState } from "react";
 import NotificationCart from "../NotificationCart";
+import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +18,7 @@ function ShoppingProduct ({ product }) {
 
     const [showNotification, setShowNotification] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
 
     if (product.length > 0) {
         IMG_DESC = product.map(info => info.attributes.img_desc).toString().split(",");
@@ -35,7 +37,6 @@ function ShoppingProduct ({ product }) {
             .then(res => res.text())
             .then(data => {
                 console.log(data);
-                // setIsLoading(false);
                 setShowNotification(true);
 
                 setTimeout(() => {
@@ -43,7 +44,9 @@ function ShoppingProduct ({ product }) {
                 }, 1000)
                 setTimeout(() => {
                     setShowNotification(false);
-                }, 3000)
+                    
+                    navigate("/cart")
+                }, 2000)
             })
             .catch(err => {
                 setIsLoading(false);
